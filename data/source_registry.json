@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "name": "OpenStreetMap / Overpass",
+      "status": "automated",
+      "collector": "scripts/collectors/collect_overpass.py",
+      "safe_use": "Structured public POI data for cafe names, coordinates, addresses, websites, phones, and opening-hours tags.",
+      "limitations": "Usually lacks work-friendly attributes such as outlets, quietness, minimum order, and unlimited-time rules."
+    },
+    {
+      "name": "Google Places API",
+      "status": "optional_automated",
+      "collector": "scripts/collectors/collect_google_places.py",
+      "safe_use": "API-backed place IDs, addresses, coordinates, hours, price levels, ratings, Google Maps URLs, and websites when an API key is available.",
+      "limitations": "Requires key, billing, and field masks; work-friendly attributes still need enrichment."
+    },
+    {
+      "name": "Blogs and public articles",
+      "status": "semi_automated_manual_review",
+      "collector": "scripts/collectors/build_source_queue.py",
+      "safe_use": "Source discovery and manual extraction of work-friendly claims with links and dates.",
+      "limitations": "Copyright and staleness risks; do not bulk-copy full article content."
+    },
+    {
+      "name": "Dcard / PTT / forums",
+      "status": "manual_or_cautious_semi_automated",
+      "collector": "scripts/collectors/build_source_queue.py",
+      "safe_use": "Public pages can support source-linked manual review.",
+      "limitations": "User-generated, potentially stale, subjective, and platform-dependent."
+    },
+    {
+      "name": "Instagram / Threads",
+      "status": "manual_optional",
+      "collector": null,
+      "safe_use": "Manual public URL capture only.",
+      "limitations": "No scraping, login bypass, unofficial APIs, proxies, or anti-bot circumvention."
+    }
+  ]
+}
+

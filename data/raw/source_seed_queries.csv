@@ -1,0 +1,13 @@
+query,source_category,city,status,notes
+不限時咖啡廳 台北 插座 wifi,blog,Taipei,manual_review,Find recent list articles with explicit unlimited-time/outlet/Wi-Fi claims.
+讀書咖啡廳 台北 安靜 插座,blog,Taipei,manual_review,Prioritize study and quietness evidence.
+工作咖啡廳 台北 線上會議,blog,Taipei,manual_review,Look for meeting suitability and noise notes.
+不限時咖啡廳 新北 插座,blog,New Taipei,manual_review,Expand beyond Taipei city.
+不限時咖啡廳 台中 插座 wifi,blog,Taichung,manual_review,Future city expansion.
+不限時咖啡廳 台南 插座 wifi,blog,Tainan,manual_review,Future city expansion.
+不限時咖啡廳 高雄 插座 wifi,blog,Kaohsiung,manual_review,Future city expansion.
+site:dcard.tw 不限時咖啡廳 插座 台北,forum,Taipei,manual_review,Dcard should remain manual-review unless a compliant access path is confirmed.
+site:ptt.cc/bbs/Food 不限時 咖啡廳 插座 台北,forum,Taipei,manual_review,PTT pages are static but many posts are old; track source dates.
+site:instagram.com 咖啡廳 插座 台北,instagram,Taipei,manual_optional,Manual URL capture only; no automated scraping.
+site:threads.net 咖啡廳 插座 台北,threads,Taipei,manual_optional,Manual URL capture only; no unofficial APIs.
+

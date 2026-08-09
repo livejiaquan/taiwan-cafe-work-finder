@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Taiwan Cafe Work Finder Cafe Record",
+  "type": "object",
+  "required": [
+    "cafe_id",
+    "canonical_name",
+    "aliases",
+    "branch_name",
+    "city",
+    "district",
+    "address",
+    "coordinates",
+    "external_ids",
+    "contact",
+    "work_attributes",
+    "source_links",
+    "field_confidence",
+    "overall_confidence",
+    "last_verified_at",
+    "notes"
+  ],
+  "properties": {
+    "cafe_id": { "type": "string" },
+    "canonical_name": { "type": "string" },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "branch_name": { "type": "string" },
+    "city": { "type": "string" },
+    "district": { "type": "string" },
+    "address": { "type": "string" },
+    "coordinates": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": ["lat", "lng"],
+          "properties": {
+            "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+            "lng": { "type": "number", "minimum": -180, "maximum": 180 }
+          }
+        },
+        { "type": "null" }
+      ]
+    },
+    "external_ids": { "type": "object" },
+    "contact": { "type": "object" },
+    "work_attributes": {
+      "type": "object",
+      "required": [
+        "unlimited_time",
+        "outlets",
+        "wifi",
+        "quietness",
+        "seat_comfort",
+        "meeting_suitability",
+        "solo_work_suitability",
+        "study_suitability",
+        "online_meeting_suitability",
+        "long_stay_suitability",
+        "opening_hours",
+        "minimum_order",
+        "price_level",
+        "food_available",
+        "reservation"
+      ],
+      "properties": {
+        "unlimited_time": { "enum": ["yes", "no", "limited", "conditional", "unknown"] },
+        "outlets": { "enum": ["abundant", "some", "limited", "none", "unknown"] },
+        "wifi": { "enum": ["yes", "no", "unknown"] },
+        "quietness": { "enum": ["quiet", "moderate", "lively", "noisy", "unknown"] },
+        "seat_comfort": { "enum": ["good", "fair", "poor", "unknown"] },
+        "meeting_suitability": { "enum": ["high", "medium", "low", "unknown"] },
+        "solo_work_suitability": { "enum": ["high", "medium", "low", "unknown"] },
+        "study_suitability": { "enum": ["high", "medium", "low", "unknown"] },
+        "online_meeting_suitability": { "enum": ["high", "medium", "low", "unknown"] },
+        "long_stay_suitability": { "enum": ["high", "medium", "low", "unknown"] },
+        "opening_hours": { "type": "string" },
+        "minimum_order": { "type": "string" },
+        "price_level": { "type": "string" },
+        "food_available": { "enum": ["yes", "no", "unknown"] },
+        "reservation": { "enum": ["yes", "no", "unknown"] }
+      }
+    },
+    "source_links": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_id", "source_type", "url", "retrieved_at", "evidence_fields", "confidence"],
+        "properties": {
+          "source_id": { "type": "string" },
+          "source_type": { "type": "string" },
+          "url": { "type": "string" },
+          "title": { "type": "string" },
+          "retrieved_at": { "type": "string" },
+          "published_at": { "type": "string" },
+          "evidence_fields": { "type": "array", "items": { "type": "string" } },
+          "confidence": { "enum": ["high", "medium", "low", "unknown"] },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "field_confidence": { "type": "object" },
+    "overall_confidence": { "enum": ["high", "medium", "low", "unknown"] },
+    "last_verified_at": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}
+

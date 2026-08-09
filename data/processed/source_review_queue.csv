@@ -1,0 +1,12 @@
+query,source_category,city,status,search_url,notes
+不限時咖啡廳 台北 插座 wifi,blog,Taipei,manual_review,https://www.google.com/search?q=%E4%B8%8D%E9%99%90%E6%99%82%E5%92%96%E5%95%A1%E5%BB%B3+%E5%8F%B0%E5%8C%97+%E6%8F%92%E5%BA%A7+wifi,Find recent list articles with explicit unlimited-time/outlet/Wi-Fi claims.
+讀書咖啡廳 台北 安靜 插座,blog,Taipei,manual_review,https://www.google.com/search?q=%E8%AE%80%E6%9B%B8%E5%92%96%E5%95%A1%E5%BB%B3+%E5%8F%B0%E5%8C%97+%E5%AE%89%E9%9D%9C+%E6%8F%92%E5%BA%A7,Prioritize study and quietness evidence.
+工作咖啡廳 台北 線上會議,blog,Taipei,manual_review,https://www.google.com/search?q=%E5%B7%A5%E4%BD%9C%E5%92%96%E5%95%A1%E5%BB%B3+%E5%8F%B0%E5%8C%97+%E7%B7%9A%E4%B8%8A%E6%9C%83%E8%AD%B0,Look for meeting suitability and noise notes.
+不限時咖啡廳 新北 插座,blog,New Taipei,manual_review,https://www.google.com/search?q=%E4%B8%8D%E9%99%90%E6%99%82%E5%92%96%E5%95%A1%E5%BB%B3+%E6%96%B0%E5%8C%97+%E6%8F%92%E5%BA%A7,Expand beyond Taipei city.
+不限時咖啡廳 台中 插座 wifi,blog,Taichung,manual_review,https://www.google.com/search?q=%E4%B8%8D%E9%99%90%E6%99%82%E5%92%96%E5%95%A1%E5%BB%B3+%E5%8F%B0%E4%B8%AD+%E6%8F%92%E5%BA%A7+wifi,Future city expansion.
+不限時咖啡廳 台南 插座 wifi,blog,Tainan,manual_review,https://www.google.com/search?q=%E4%B8%8D%E9%99%90%E6%99%82%E5%92%96%E5%95%A1%E5%BB%B3+%E5%8F%B0%E5%8D%97+%E6%8F%92%E5%BA%A7+wifi,Future city expansion.
+不限時咖啡廳 高雄 插座 wifi,blog,Kaohsiung,manual_review,https://www.google.com/search?q=%E4%B8%8D%E9%99%90%E6%99%82%E5%92%96%E5%95%A1%E5%BB%B3+%E9%AB%98%E9%9B%84+%E6%8F%92%E5%BA%A7+wifi,Future city expansion.
+site:dcard.tw 不限時咖啡廳 插座 台北,forum,Taipei,manual_review,https://www.google.com/search?q=site%3Adcard.tw+%E4%B8%8D%E9%99%90%E6%99%82%E5%92%96%E5%95%A1%E5%BB%B3+%E6%8F%92%E5%BA%A7+%E5%8F%B0%E5%8C%97,Dcard should remain manual-review unless a compliant access path is confirmed.
+site:ptt.cc/bbs/Food 不限時 咖啡廳 插座 台北,forum,Taipei,manual_review,https://www.google.com/search?q=site%3Aptt.cc%2Fbbs%2FFood+%E4%B8%8D%E9%99%90%E6%99%82+%E5%92%96%E5%95%A1%E5%BB%B3+%E6%8F%92%E5%BA%A7+%E5%8F%B0%E5%8C%97,PTT pages are static but many posts are old; track source dates.
+site:instagram.com 咖啡廳 插座 台北,instagram,Taipei,manual_optional,https://www.google.com/search?q=site%3Ainstagram.com+%E5%92%96%E5%95%A1%E5%BB%B3+%E6%8F%92%E5%BA%A7+%E5%8F%B0%E5%8C%97,Manual URL capture only; no automated scraping.
+site:threads.net 咖啡廳 插座 台北,threads,Taipei,manual_optional,https://www.google.com/search?q=site%3Athreads.net+%E5%92%96%E5%95%A1%E5%BB%B3+%E6%8F%92%E5%BA%A7+%E5%8F%B0%E5%8C%97,Manual URL capture only; no unofficial APIs.
