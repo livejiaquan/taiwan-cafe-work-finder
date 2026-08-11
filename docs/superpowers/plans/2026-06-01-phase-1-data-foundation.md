@@ -1,5 +1,10 @@
 # Phase 1 Data Foundation Implementation Plan
 
+> Historical plan (2026-06-01): later trust review supersedes the optional
+> Google live-collector task. Only its request dry-run/reference path remains;
+> live full-content persistence is policy-disabled. See `DECISIONS.md` and
+> `docs/source-policy-registry.md`.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a repeatable research and data-collection foundation for Taiwan work-friendly cafe discovery without building the final website.
@@ -75,4 +80,3 @@
 - [ ] Validate required fields, enum values, URLs, coordinates, and source links.
 - [ ] Run duplicate detection.
 - [ ] Update README instructions, task statuses, source coverage, limitations, and Phase 2 next steps.
-

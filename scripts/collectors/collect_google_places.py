@@ -3,15 +3,11 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import sys
 import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "src"))
-
-from cafe_work_finder.schema import today_iso
 
 
 ENDPOINT = "https://places.googleapis.com/v1/places:searchText"
@@ -80,25 +76,13 @@ def main() -> int:
         print(json.dumps({"endpoint": ENDPOINT, "field_mask": FIELD_MASK, "body": body}, ensure_ascii=False, indent=2))
         return 0
 
-    api_key = os.environ.get("GOOGLE_MAPS_API_KEY")
-    if not api_key:
-        print("GOOGLE_MAPS_API_KEY is not set; Google Places collection is optional and was skipped.", file=sys.stderr)
-        return 2
-
-    data = fetch_places(api_key, body)
-    data["_collection"] = {
-        "source": "google_places",
-        "query": args.query,
-        "retrieved_at": today_iso(),
-        "field_mask": FIELD_MASK,
-    }
-    output_path = ROOT / args.output
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
-    print(f"Wrote {len(data.get('places', []))} Google Places results to {args.output}")
-    return 0
+    print(
+        "Live Google Places collection is disabled: the current raw snapshot design "
+        "does not meet storage, display, and attribution policy requirements. Use --dry-run only.",
+        file=sys.stderr,
+    )
+    return 2
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

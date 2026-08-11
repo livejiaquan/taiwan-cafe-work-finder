@@ -1,6 +1,8 @@
 # Taiwan Cafe Work Finder
 
-Phase 1 builds the research and data-collection foundation for a future Taiwan work-friendly cafe discovery product.
+This repository is building an evidence-first cafe finder for quiet solo work or
+study in greater Taipei. It is currently a data and trust foundation, not a
+public website.
 
 This repository currently does not build the final website. It focuses on source research, data schema, collectors, normalization, validation, deduplication, and a curated seed dataset.
 
@@ -10,7 +12,8 @@ This repository currently does not build the final website. It focuses on source
 - `data/processed/`: generated normalized JSONL and duplicate/source-review outputs
 - `data/curated/`: curated seed dataset for future product work
 - `scripts/collectors/`: public/API source collectors and source queue tooling
-- `scripts/normalize/`: normalization, merge, validation, and duplicate checks
+- `scripts/normalize/`: normalization, safe merge, validation, and duplicate checks
+- `scripts/quality/`: publication-readiness checks that quarantine unsafe candidates
 - `src/cafe_work_finder/`: shared schema, normalization, IO, and dedupe code
 - `docs/`: schema and implementation planning docs
 
@@ -53,17 +56,14 @@ Run Google Places collector dry-run:
 python scripts/collectors/collect_google_places.py --dry-run
 ```
 
-If `GOOGLE_MAPS_API_KEY` is set and billing/API access is configured:
-
-```bash
-GOOGLE_MAPS_API_KEY=... python scripts/collectors/collect_google_places.py
-PYTHONPATH=src python scripts/normalize/normalize_google_places.py
-```
+Google Places full-content persistence is not part of the production plan. The
+collector remains a dry-run/reference path until storage, display, and
+attribution policies are redesigned and reviewed.
 
 Merge curated seed records:
 
 ```bash
-PYTHONPATH=src python scripts/normalize/merge_curated.py --manual-only
+PYTHONPATH=src python scripts/normalize/merge_curated.py
 ```
 
 Validate curated data:
@@ -71,6 +71,15 @@ Validate curated data:
 ```bash
 PYTHONPATH=src python scripts/normalize/validate_dataset.py
 ```
+
+Audit the actual publication contract with an explicit date:
+
+```bash
+PYTHONPATH=src python scripts/quality/audit_publication_readiness.py --as-of 2026-08-09
+```
+
+The expected result for the current eight legacy candidates is `0 publishable`.
+They have provenance, but no current observation or branch-level verification.
 
 Check likely duplicates:
 
@@ -114,15 +123,13 @@ Current generated counts:
 - 2,388 normalized OSM records
 - 11 manually reviewable source-discovery queries
 
-The curated seed is intentionally smaller than the OSM processed dataset. OSM is broad coverage; curated records require work-friendly source evidence.
+The curated seed is intentionally smaller than the OSM processed dataset. OSM
+is a discovery input and is excluded from the default merge. Presence in the
+curated file still does not imply publication readiness.
 
-## Phase 2 Handoff
+## Current Roadmap
 
-Phase 2 should design the product/frontend around the validated schema:
-
-- search and filters for work-friendly attributes
-- source transparency and confidence labels
-- map/list UX
-- stale-data reporting
-- city/district expansion
-- scheduled API/manual refresh process
+The trust contract and evidence-based product roadmap are in
+[`docs/data-publication-contract.md`](docs/data-publication-contract.md) and
+[`docs/product/mission-roadmap.md`](docs/product/mission-roadmap.md). A thin
+mobile product starts only after 10-12 branch-resolved cafes meet that contract.

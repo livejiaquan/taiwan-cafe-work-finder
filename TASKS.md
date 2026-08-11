@@ -9,7 +9,8 @@
 - [x] Implement core normalization utilities.
 - [x] Implement validation and duplicate detection.
 - [x] Implement Overpass collector.
-- [x] Implement optional Google Places collector.
+- [x] Implement Google Places request dry-run/reference path; keep live
+  collection disabled pending an approved storage/display/attribution design.
 - [x] Create curated seed dataset with source links and confidence notes.
 - [x] Run tests.
 - [x] Validate curated dataset format.
@@ -21,6 +22,8 @@
 - Manual curated seed: `data/curated/cafes.seed.jsonl` with 8 records.
 - OSM raw sample: `data/raw/overpass_taipei_sample.json` with 2,388 Taipei-area cafe elements.
 - OSM normalized sample: `data/processed/osm_cafes.normalized.jsonl` with 2,388 records.
+- The committed OSM snapshot predates the current `out meta` query and contains
+  no element timestamps or versions; future refreshes request that lineage.
 - Source review queue: `data/processed/source_review_queue.csv` with 11 search/source-discovery rows.
 - Duplicate report: `data/processed/duplicate_candidates.json`.
 

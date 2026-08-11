@@ -5,7 +5,7 @@
 | Source | Status | Use In Phase 1 | Notes |
 | --- | --- | --- | --- |
 | OpenStreetMap / Overpass | Automated | Yes | Good for cafe POIs, names, coordinates, addresses, websites, phones, and opening-hours tags. Weak for work-friendly details. |
-| Google Places API | Optional automated | Yes if API key is available | Strong for place IDs, addresses, coordinates, hours, ratings, price level, and website URI. Requires key/billing and field masks. |
+| Google Places API | Policy-blocked reference | No live persistence | Potentially useful for place IDs and runtime place details, but the current raw/normalized persistence design is not approved for production. An API key does not remove storage, display, and attribution constraints. |
 | Public blogs/articles | Semi-automated/manual | Yes | Good for work-friendly claims such as unlimited time, outlets, Wi-Fi, quietness, and minimum order. Use links and manual review. |
 | Dcard public posts | Manual/semi-automated | Yes with caution | Useful user-generated evidence. Treat as manual review source; avoid aggressive scraping. |
 | PTT public posts | Semi-automated/manual | Yes with caution | Static pages are accessible; many posts are old. Use source date and low confidence for stale records. |
@@ -48,7 +48,12 @@ Useful fields:
 - `rating`
 - `userRatingCount`
 
-Automation status: optional collector implemented in `scripts/collectors/collect_google_places.py`. It requires `GOOGLE_MAPS_API_KEY`.
+Automation status: the request builder and dry-run remain as a reference in
+`scripts/collectors/collect_google_places.py`, but live collection is disabled.
+The former collector persisted full provider responses and normalized content,
+which is outside the approved production policy. Do not enable it merely by
+adding `GOOGLE_MAPS_API_KEY`; first approve a policy-compliant runtime,
+storage, display, and attribution design.
 
 ### Blogs And Articles
 
@@ -105,8 +110,12 @@ Rejected use:
 
 Generated on 2026-06-01:
 
-- Overpass Taipei sample: 2,388 raw cafe POIs collected and normalized.
+- Overpass Taipei sample: 2,388 raw cafe POIs collected and normalized. This
+  legacy snapshot has no element `timestamp` or `version` metadata; the current
+  query requests `out meta` only for future refreshes. OSM edit metadata is
+  lineage, not evidence that a cafe or work condition was recently verified.
 - Manual curated seed: 8 records from public Dcard/PTT-style sources.
 - Manual source discovery queue: 11 search rows across Taipei, New Taipei, Taichung, Tainan, Kaohsiung, Dcard, PTT, Instagram, and Threads.
-- Google Places: collector implemented, dry-run verified, live collection blocked until `GOOGLE_MAPS_API_KEY` is configured.
+- Google Places: request dry-run verified; live collection is policy-disabled.
+  Missing credentials are not the durable blocker.
 - Instagram/Threads: documented as manual/optional only; no automated scraper implemented.

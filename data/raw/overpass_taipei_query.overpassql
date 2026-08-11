@@ -4,4 +4,4 @@
   way["amenity"="cafe"](24.95,121.45,25.20,121.65);
   relation["amenity"="cafe"](24.95,121.45,25.20,121.65);
 );
-out center tags qt;
+out meta center qt;

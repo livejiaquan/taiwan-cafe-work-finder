@@ -56,6 +56,43 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertTrue(first.startswith("manual-"))
 
+    def test_legacy_ids_do_not_change_when_branch_name_is_present(self):
+        cases = [
+            (
+                {
+                    "name": "Percent CAFE %",
+                    "branch_name": "板橋店",
+                    "city": "New Taipei",
+                    "district": "Banqiao",
+                    "address": "新北市板橋區仁化街67號",
+                },
+                "manual-e8f41b636c17",
+            ),
+            (
+                {
+                    "name": "KOMEDA's Coffee",
+                    "branch_name": "branch needs verification",
+                    "city": "Taipei",
+                    "district": "Multiple",
+                    "address": "",
+                },
+                "manual-2c8e2a223965",
+            ),
+        ]
+
+        for row, expected_id in cases:
+            with self.subTest(name=row["name"]):
+                self.assertEqual(
+                    normalize_manual_row(
+                        {
+                            **row,
+                            "source_url": "https://example.com/evidence",
+                            "source_type": "forum",
+                        }
+                    )["cafe_id"],
+                    expected_id,
+                )
+
     def test_validate_record_rejects_missing_sources(self):
         record = normalize_manual_row(
             {

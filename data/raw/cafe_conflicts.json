@@ -1,0 +1,30 @@
+[
+  {
+    "match": {
+      "canonical_name": "5 Senses Café",
+      "source_url": "https://www.ptt.cc/bbs/Food/M.1458021159.A.8BA.html"
+    },
+    "conflict": {
+      "conflict_id": "5-senses-operational-status-2026-08-09",
+      "field": "operational_status",
+      "status": "unresolved",
+      "summary": "Two current secondary listings report this branch as closed; this is not independently confirmed and requires first-party or on-site resolution.",
+      "signals": [
+        {
+          "source_type": "secondary_listing",
+          "url": "https://cafenomad.tw/shop/2fc6d58b-d8d4-4f12-afd3-4ea5c875705c",
+          "retrieved_at": "2026-08-09",
+          "reported_value": "closed",
+          "notes": "Cafe Nomad displayed a closed signal for the matched branch; treated only as a conflict signal."
+        },
+        {
+          "source_type": "secondary_listing",
+          "url": "https://ifoodie.tw/blog/53015e9ba9bbae5e51000001",
+          "retrieved_at": "2026-08-09",
+          "reported_value": "closed",
+          "notes": "iFoodie displayed a closed signal for the matched branch; treated only as a conflict signal."
+        }
+      ]
+    }
+  }
+]

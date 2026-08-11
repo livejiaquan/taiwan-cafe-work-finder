@@ -2,17 +2,19 @@
   "sources": [
     {
       "name": "OpenStreetMap / Overpass",
+      "policy_id": "osm_odbl_discovery_v1",
       "status": "automated",
       "collector": "scripts/collectors/collect_overpass.py",
-      "safe_use": "Structured public POI data for cafe names, coordinates, addresses, websites, phones, and opening-hours tags.",
-      "limitations": "Usually lacks work-friendly attributes such as outlets, quietness, minimum order, and unlimited-time rules."
+      "safe_use": "ODbL discovery data for cafe identity and location with required OpenStreetMap attribution.",
+      "limitations": "Usually lacks work-friendly attributes; retrieval and element-edit timestamps are not real-world observations."
     },
     {
       "name": "Google Places API",
-      "status": "optional_automated",
+      "policy_id": "google_places_restricted_v1",
+      "status": "policy_blocked_non_production",
       "collector": "scripts/collectors/collect_google_places.py",
-      "safe_use": "API-backed place IDs, addresses, coordinates, hours, price levels, ratings, Google Maps URLs, and websites when an API key is available.",
-      "limitations": "Requires key, billing, and field masks; work-friendly attributes still need enrichment."
+      "safe_use": "Dry-run request design only; permitted Place ID handling or runtime integration may be reconsidered after policy review.",
+      "limitations": "The current full-response snapshot and normalized persistence design is not permitted for production use and live collection is disabled."
     },
     {
       "name": "Blogs and public articles",
@@ -23,6 +25,7 @@
     },
     {
       "name": "Dcard / PTT / forums",
+      "policy_id": "legacy_forum_v1",
       "status": "manual_or_cautious_semi_automated",
       "collector": "scripts/collectors/build_source_queue.py",
       "safe_use": "Public pages can support source-linked manual review.",
@@ -37,4 +40,3 @@
     }
   ]
 }
-

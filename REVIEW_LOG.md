@@ -60,3 +60,19 @@ Limitations:
 - The OSM sample is broad but not curated; work-friendly attributes are mostly unknown and require enrichment.
 - Manual records from Dcard/PTT/blog-style sources need current re-verification before being shown as product truth.
 - Chain/branch records require branch-level verification before frontend use.
+
+## 2026-08-11 Trust Foundation Correction
+
+The 2026-06-01 Google note above is retained as historical execution context,
+not current product guidance. A missing API key was why that run did not make a
+live request, but it is not the durable blocker. The live collector is now
+policy-disabled because the previous full-response persistence and normalized
+snapshot design lacks an approved storage, display, and attribution contract.
+The dry-run remains only as a request/reference check.
+
+The committed 2,388-element Overpass snapshot contains zero element
+`timestamp` and zero `version` fields. The current collector/query requests
+`out meta` for future refreshes, but documentation and publication checks must
+not imply that the legacy snapshot already carries that metadata. Even when
+present, an OSM edit timestamp is source lineage rather than a field observation
+or verification date.
