@@ -1,6 +1,6 @@
 # Product Mission And Evidence-Based Roadmap
 
-Last reviewed: 2026-08-09 (Asia/Taipei)
+Last reviewed: 2026-08-11 (Asia/Taipei)
 
 ## Mission
 
@@ -111,7 +111,7 @@ branch-ambiguous claims are excluded from positive filters and ranking.
 
 ## Roadmap
 
-### Iteration 1 - Trust Foundation (current)
+### Iteration 1 - Trust Foundation (complete at `74d4711`)
 
 Outcome: the pipeline can no longer manufacture freshness or accidentally
 publish discovery candidates.
@@ -140,6 +140,13 @@ not publishable. A green test suite alone is insufficient.
 
 Outcome: 10-12 genuinely usable branches across 2-3 Taipei districts.
 
+Before collecting the full slice, run a private three-branch verification-
+operations preflight in one district. It is not a public directory and must not
+feed a UI. Proceed only after a real project-controlled evidence host and
+production policy exist, all three records pass without exemptions, and actual
+initial/refresh time keeps H2 plausible. See
+`docs/research/2026-08-11-mvp-browse-find-readiness.md`.
+
 Acceptance criteria:
 
 - all branches meet the publication contract;
@@ -150,6 +157,7 @@ Acceptance criteria:
 - source and maintenance time are logged;
 - no Cafe Nomad, Catcha, Google Places, or other third-party dataset is imported
   without explicit downstream rights.
+- a whitelist public projection passes leak tests before any client consumes it.
 
 ### Iteration 3 - Thin Public Product
 
@@ -179,8 +187,11 @@ Outcome: prove that the product is useful and maintainable.
 
 ## Continue, Stop, And Pivot Gates
 
-Continue when the publication contract is testable, at least ten branches meet
-the trust bar, freshness affects user decisions, and maintenance cost is viable.
+Continue private verification when the publication contract is testable and a
+three-branch pilot passes without exemptions at a plausible maintenance cost.
+Continue to public browse/find only when at least ten branches across 2-3
+districts meet the trust bar, a whitelist projection passes leak tests,
+freshness affects user decisions, and maintenance cost is viable.
 
 Stop public launch when any legacy seed is recommended without re-verification,
 when stale/unknown claims pass positive filters, when data rights are unclear,
@@ -206,4 +217,3 @@ preference.
 
 These blockers do not prevent Iteration 1. They do prevent claiming a launchable
 public directory.
-

@@ -133,3 +133,6 @@ The trust contract and evidence-based product roadmap are in
 [`docs/data-publication-contract.md`](docs/data-publication-contract.md) and
 [`docs/product/mission-roadmap.md`](docs/product/mission-roadmap.md). A thin
 mobile product starts only after 10-12 branch-resolved cafes meet that contract.
+The 2026-08-11 [MVP browse/find readiness decision](docs/research/2026-08-11-mvp-browse-find-readiness.md)
+confirms the current result is still `0 publishable`; the next step is a private
+three-branch verification-operations pilot, not an empty or sample-data UI.
