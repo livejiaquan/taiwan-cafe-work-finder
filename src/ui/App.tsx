@@ -84,7 +84,7 @@ export function App() {
     <header className="site-header"><a className="brand" href="#top" aria-label="台灣生活資料誌：工作咖啡廳搜尋首頁"><span className="brand-mark" aria-hidden="true"><span /></span><span><strong>台灣生活資料誌</strong><small>TAIWAN FIELD NOTES</small></span></a><p className="site-name">工作咖啡廳搜尋</p><button className="header-action" onClick={() => setNotice(true)}><Icon name="shield" size={17} />資料原則</button></header>
     {notice && <div className="toast" role="status"><Icon name="check" size={18} />不展示未通過公開門檻的候選資料。<button aria-label="關閉通知" onClick={() => setNotice(false)}><Icon name="x" size={17} /></button></div>}
     <main id="main-content">
-      <section id="top" className="hero"><div className="hero__copy"><p className="hero-kicker"><span />大台北・單人專注工作</p><h1>今天要工作，<br />先確認它真的適合。</h1><p className="hero__lede">一個以證據與新鮮度為優先的工作咖啡廳搜尋。插座、Wi‑Fi、安靜度與營業狀態，都不該只是舊印象。</p><a className="primary-button primary-button--active" href="#data-status-title">查看目前狀態 <Icon name="arrow" /></a></div><StatusCard /></section>
+      <section id="top" className="hero"><div className="hero__copy"><p className="hero-kicker"><span />大台北・單人專注工作</p><h1><span className="hero__title-line">今天要工作，</span><br /><span className="hero__title-line">先確認它真的適合。</span></h1><p className="hero__lede">一個以證據與新鮮度為優先的工作咖啡廳搜尋。插座、Wi‑Fi、安靜度與營業狀態，都不該只是舊印象。</p><a className="primary-button primary-button--active" href="#data-status-title">查看目前狀態 <Icon name="arrow" /></a></div><StatusCard /></section>
       <FinderControls />
       <EvidenceGrid />
       <NextStep />
