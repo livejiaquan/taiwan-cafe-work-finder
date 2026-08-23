@@ -4,7 +4,7 @@ This repository is building an evidence-first cafe finder for quiet solo work or
 study in greater Taipei. It is currently a data and trust foundation, not a
 public website.
 
-This repository currently does not build the final website. It focuses on source research, data schema, collectors, normalization, validation, deduplication, and a curated seed dataset.
+This repository focuses on source research, data schema, collectors, normalization, validation, deduplication, and a curated seed dataset. It also includes a deliberately bounded public-status frontend: it communicates the current verification gate without exposing candidate records as recommendations.
 
 ## Structure
 
@@ -18,6 +18,18 @@ This repository currently does not build the final website. It focuses on source
 - `docs/`: schema and implementation planning docs
 
 ## Quick Start
+
+Run the public-status frontend:
+
+```bash
+npm install
+npm run dev
+```
+
+The UI is a static Vite + React status and methodology page. It does not read or
+ship canonical JSONL, audit output, candidate names, or discovery data. The
+search controls remain visibly disabled until a separate whitelist-based public
+projection exists and the publication gate is met.
 
 Run unit tests:
 
