@@ -5,7 +5,7 @@
 Scope reviewed:
 
 - project is currently empty
-- Git repository root is `/Users/jiaquan/Development`, not this subfolder
+- Git repository root was the parent workspace folder, not this subfolder
 - no existing frontend or backend exists in `taiwan-cafe-work-finder`
 - final UI is explicitly out of scope
 
